@@ -1,0 +1,105 @@
+<!--Include Header-->
+<%- include('include/_header')%>
+
+<!--/Include Header-->
+
+<!--Main-->
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex-justify-between">
+            <div class="filter">
+                <a href="/"><i class="bi bi-chevron-double-left"></i> All user</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Updating the User</h2>
+            <span class="text-dark">Use the below form to update the account</span>
+        </div>
+         <!--Form Handling-->
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100" >
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;" >
+            <div class="card-body p-4 p-md-5" style=" background: linear-gradient(to right,  #02AAB0,#00CDAC);">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Edit User</h3>
+              <form method="POST" id="update_user">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-group">
+                      <label for="name" class="text-light">Name</label>
+                      <input type="hidden" name="id" value="<%= user._id %>">
+                      <input type="text" name="name" value="<%= user.name %>" placeholder="Mark Stoenis">
+                  </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-group">
+                      <label for="Email" class="text-light">Email</label>
+                      <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
+                  </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <div class="radio inline">
+                        <input type="radio" id="radio-2" name="gender" value="Male" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %> >
+                        <label for="radio-2" class="radio-label">Male</label>
+                    </div>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <div class="radio inline">
+                        <input type="radio" id="radio-3" name="gender" value="Female" value="Male" <%= user.gender == 'Female' ? 'checked' : '' %> >
+                        <label for="radio-3" class="radio-label">Female</label>
+                    </div>
+                    </div> 
+                  </div>
+                  <div class="col-md-6 mb-4">
+    
+                    <h6 class="mb-2 pb-1">Status: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <div class="radio inline">
+                        <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %>>
+                        <label for="radio-4" class="radio-label">Active</label>
+                    </div>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <div class="radio inline">
+                        <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
+                        <label for="radio-5" class="radio-label">Inactive</label>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-info btn-block" type="submit" value="Update" />
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--/Form Handling-->
+    </div>
+</main>
+<!--/Main-->
+
+<!--Include Footer-->
+<%- include('include/_footer')%>
+
+<!--/Include Footer-->

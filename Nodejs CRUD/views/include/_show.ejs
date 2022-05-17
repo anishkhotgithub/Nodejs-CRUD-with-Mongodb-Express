@@ -1,0 +1,18 @@
+
+<% for(var i=0;i<users.length;i++){ %>
+<tr >
+    <td><%= i+1 %></td>
+    <td> <%=users[i].name%> </td>
+    <td><%=users[i].email%></td>
+    <td><%=users[i].gender%></td>
+    <td><%=users[i].status%></td>
+    <td>
+        <a href="updateuser?id=<%= users[i]._id%>" class="btn btn-primary update">
+            <span class="text"> <i class="bi bi-pencil-fill"></i> </span>
+        </a>
+        <a class="btn btn-primary delete" data-id=<%= users[i]._id%>>
+          <span class="text">  <i class="bi bi-trash-fill"></i> </span>
+      </a>
+    </td>
+  </tr>
+  <% } %>
